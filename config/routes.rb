@@ -1,4 +1,11 @@
 Coder8::Application.routes.draw do
+  get "main/top" => "main#show"
+
+  get "user/login" => "login#index"
+  post "user/check" => "login#check"
+  
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -6,8 +13,6 @@ Coder8::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
   
-  match 'upload' => 'upload#show'
-
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

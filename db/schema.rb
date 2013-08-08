@@ -11,12 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803173504) do
+ActiveRecord::Schema.define(:version => 20130808054239) do
 
-  create_table "user_codes", :primary_key => "user_id", :force => true do |t|
-    t.string   "file_name",  :limit => 100, :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+  create_table "users", :force => true do |t|
+    t.string   "user_name",  :default => "", :null => false
+    t.string   "password",   :default => "", :null => false
+    t.string   "first_name", :default => "", :null => false
+    t.string   "last_name",  :default => "", :null => false
+    t.integer  "age",        :default => 0,  :null => false
+    t.string   "servers"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
 end

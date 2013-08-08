@@ -1,0 +1,7 @@
+<%= form_tag(:action => 'check') do %>
+	<ul>
+		<li><%= label_tag 'username' %><%= text_field_tag 'user_name' %></li>
+		<li><%= label_tag 'password' %><%= text_field_tag 'password' %></li>
+		<li><%= submit_tag "login" %></li>
+	</ul>
+<% end %>
