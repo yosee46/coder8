@@ -1,0 +1,12 @@
+
+<div class='header'>
+	<div id='st_username'>
+		<%=@user_name%>
+	</div>
+</div>
+
+<% @users.each do |user| %>
+<ul id='users'>
+	<li><%= user.user_name %></li>
+</ul>
+<% end %>

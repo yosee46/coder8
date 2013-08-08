@@ -1,8 +1,16 @@
 Coder8::Application.routes.draw do
+
+  #トップページ
   get "main/top" => "main#show"
 
-  get "user/login" => "login#index"
-  post "user/check" => "login#check"
+  #ログイン関連
+  get "user/login" => "login#login"
+  get "user/logout" => "login#logout_do"
+  post "user/login_do" => "login#login_do"
+  
+  #ユーザ情報関連
+  get "user/list" => "user#show_user_list"
+  get "user/list/admin" => "user#show_admin_list"
   
   
 

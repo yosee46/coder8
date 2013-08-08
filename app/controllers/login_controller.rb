@@ -1,11 +1,13 @@
 class LoginController < ApplicationController
-  def index
+  #ログインページ表示
+  def login
     @user = User.new
   end
 
-  def check
-    password = params["password"]
-    user_name = params["user_name"]
+  #ログイン処理
+  def login_do
+    password = params[:password]
+    user_name = params[:username]
      
     #ユーザを検索
     @user = User.where(:user_name=>user_name)
@@ -13,10 +15,16 @@ class LoginController < ApplicationController
       redirect_to '/user/login'
     else
       #セッションに登録
-      session[:user_name] = user_name
+      session[:username] = user_name
       redirect_to '/main/top'
     end
-    
+  end
+  
+  #ログアウト処理
+  def logout_do
+    #セッション削除
+    session.delete :username
+    redirect_to '/user/login'
   end
   
 end
